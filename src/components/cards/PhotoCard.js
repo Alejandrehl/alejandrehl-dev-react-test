@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PrimarySpinner from "../loaders/PrimarySpinner";
 
 const PhotoCard = ({ photo }) => {
   const [loading, setLoading] = useState(true);
@@ -8,7 +9,7 @@ const PhotoCard = ({ photo }) => {
       <div className="line-container">
         <div className="single-line">{photo.title}</div>
       </div>
-      {loading && <div className="loader" />}
+      {loading && <PrimarySpinner />}
       <a href={photo.url} target="_blank" rel="noopener noreferrer">
         <img
           src={photo.thumbnailUrl}
